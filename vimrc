@@ -17,7 +17,8 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'pangloss/vim-javascript'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
-
+Plugin 'tpope/vim-surround'
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -26,18 +27,33 @@ filetype plugin indent on    " required
 "Plugins end
 
 " Leader Mappings
-map <Space> <leader>
+map <,> <leader>
 
 "Paste and cut without saving to buffer
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
-xnoremap <leader>p "_dP
+xnoremap p "_dP
 
 " Easy navigation between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+"disable the noobiness
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+"inoremap <Up> <NOP>
+"inoremap <Down> <NOP>
+"inoremap <Left> <NOP>
+"inoremap <Right> <NOP>
+
+"Better page up/down behaviour
+map <PageDown> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set scroll=0<CR>
+map <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scroll=0<CR>
 
 map <C-p> :CtrlP
 

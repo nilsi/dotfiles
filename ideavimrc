@@ -1,7 +1,9 @@
 source ~/.vimrc
 
-map <leader>r :action RenameElement<CR>
-map <leader>t :action Macro.uber_macro<CR>
+map <leader>t :action RenameElement<CR>
+map <leader>s :action Macro.uber_macro<CR>
+map <leader>r :action Run<CR>
+map <leader>e :action Debug<CR>
 
 map <leader>d "_d
 map <leader>D "_D
