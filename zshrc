@@ -15,6 +15,17 @@ ZSH_THEME="robbyrussell"
 #alias git='LANG=en_US git'
 alias git='LANG=en_GB git'
 
+# Name and save a stash by: $gitstash nice
+function gitstash() {
+    git stash push -m "zsh_stash_name_$1"
+}
+
+# Retrieve a stash by: $gitstashapply nice
+function gitstashapply() {
+    git stash apply $(git stash list | grep "zsh_stash_name_$1" | cut -d: -f1)
+}
+
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
