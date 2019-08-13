@@ -85,7 +85,19 @@ plugins=(
   rake
   rbenv
   ruby
+  vi-mode
 )
+
+#make jj go to command mode
+bindkey -M viins 'jj' vi-cmd-mode
+
+#make v open current command in vim
+bindkey -M vicmd v edit-command-line
+
+#allow backspace to delete before insert point
+#http://permalink.gmane.org/gmane.comp.shells.zsh.user/9770
+zle -A .backward-kill-word vi-backward-kill-word
+zle -A .backward-delete-char vi-backward-delete-char
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,8 +105,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LC_ALL=en_US.utf-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -107,7 +119,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

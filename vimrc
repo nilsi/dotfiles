@@ -1,11 +1,11 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible  " Be iMproved, required
+filetype off      " Required
 
-" set the runtime path to include Vundle and initialize
+" Plugins end
+"
+" Set the runtime path to include Vundle and initialize, rtp is vim's runtimepath
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -31,7 +31,7 @@ map <,> <leader>
 " Paste and cut without saving to buffer
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
-xnoremap p "_dP
+xnoremap p "_dP 
 
 " Easy navigation between splits
 nnoremap <C-J> <C-W><C-J>
@@ -39,16 +39,21 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"disable the noobiness
+" Easy tab navigation
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
+" Keep cursor away from bottom of screen
+set scrolloff=6 
+
+" Showcase comments in italics
+highlight Comment cterm=italic gui=italic
+
+" Disable the noobiness
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
-" inoremap <Up> <NOP>
-" inoremap <Down> <NOP>
-" inoremap <Left> <NOP>
-" inoremap <Right> <NOP>
 
 " Better page up/down behaviour
 map <PageDown> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set scroll=0<CR>
@@ -56,6 +61,9 @@ map <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scro
 
 map <C-p> :CtrlP
 map <C-n> :NERDTreeToggle<CR>
+
+" Show hidden files in nerdtree
+let NERDTreeShowHidden=1
 
 syntax on
 
@@ -79,6 +87,16 @@ set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set showcmd                           " Show size of visual selection
 
+" Send more characters for redraws
+set ttyfast
+
+" Enable mouse use in all modes
+set mouse=a
+
+" Set this to the name of your terminal that supports mouse codes.
+" Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
+set ttymouse=xterm2
+
 " Persistent undo
 set undodir=~/.vim/undo/
 set undofile
@@ -92,22 +110,6 @@ set wildignore+=*.zip
 set wildignore+=*/vendor/bundle/*
 set wildignore+=*/node_modules/
 
-"-------------------------------------------------------------------------------
-" Interface
-"-------------------------------------------------------------------------------
-
 set number            " Enable line numbers
 set scrolloff=5       " Leave 5 lines of buffer when scrolling
 set sidescrolloff=10  " Leave 10 characters of horizontal buffer when scrolling
-
-"-------------------------------------------------------------------------------
-" Colors & Formatting
-"-------------------------------------------------------------------------------
-
-" Showcase comments in italics
-highlight Comment cterm=italic gui=italic
-
-" Easy tab navigation
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-
