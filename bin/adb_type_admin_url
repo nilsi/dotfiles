@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+adb shell input keyevent KEYCODE_MOVE_END
+adb shell input keyevent --longpress "$(printf 'KEYCODE_DEL %.0s' {1..30})"
+adb shell input text https://admin.getmeetio.com

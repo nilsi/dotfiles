@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+adb shell am start -n com.getmeetio.view/com.getmeetio.view.MainActivity
