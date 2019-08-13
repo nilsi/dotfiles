@@ -25,7 +25,6 @@ function gitstashapply() {
     git stash apply $(git stash list | grep "zsh_stash_name_$1" | cut -d: -f1)
 }
 
-
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of

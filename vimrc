@@ -1,4 +1,3 @@
-"Plugins start
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -6,7 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -24,12 +23,12 @@ Plugin 'w0rp/ale'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-"Plugins end
+" Plugins end
 
 " Leader Mappings
 map <,> <leader>
 
-"Paste and cut without saving to buffer
+" Paste and cut without saving to buffer
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 xnoremap p "_dP
@@ -46,17 +45,16 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-"inoremap <Up> <NOP>
-"inoremap <Down> <NOP>
-"inoremap <Left> <NOP>
-"inoremap <Right> <NOP>
+" inoremap <Up> <NOP>
+" inoremap <Down> <NOP>
+" inoremap <Left> <NOP>
+" inoremap <Right> <NOP>
 
-"Better page up/down behaviour
+" Better page up/down behaviour
 map <PageDown> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set scroll=0<CR>
 map <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scroll=0<CR>
 
 map <C-p> :CtrlP
-
 map <C-n> :NERDTreeToggle<CR>
 
 syntax on
