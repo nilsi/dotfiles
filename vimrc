@@ -23,15 +23,17 @@ Plugin 'w0rp/ale'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Plugins end
-
 " Leader Mappings
 map <,> <leader>
 
-" Paste and cut without saving to buffer
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-xnoremap p "_dP 
+" Cancel the default behavior of putting
+" text they delete in the default register.
+nnoremap x "_x
+nnoremap c "_c
+nnoremap C "_C
+
+" Paste over without overwriting register
+xnoremap p "_dP
 
 " Easy navigation between splits
 nnoremap <C-J> <C-W><C-J>
