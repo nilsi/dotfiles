@@ -26,6 +26,7 @@ plugins=(
   rbenv
   ruby
   vi-mode
+  zsh-syntax-highlighting
 )
 
 #make jj go to command mode
@@ -65,6 +66,3 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
-
-# Load zsh-syntax-highlighting; should be last.
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
