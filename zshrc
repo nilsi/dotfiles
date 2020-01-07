@@ -4,15 +4,14 @@ export PATH="$HOME/.bin:$PATH"
 ZSH_THEME="robbyrussell"
 
 # Set Git language to English
-#alias git='LANG=en_US git'
 alias git='LANG=en_GB git'
 
-# Name and save a stash by: $gitstash nice
+# Name and save a stash by: $gitstash stash_name
 function gitstash() {
     git stash push -m "zsh_stash_name_$1"
 }
 
-# Retrieve a stash by: $gitstashapply nice
+# Retrieve a stash by: $gitstashapply stash_name
 function gitstashapply() {
     git stash apply $(git stash list | grep "zsh_stash_name_$1" | cut -d: -f1)
 }

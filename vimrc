@@ -7,7 +7,6 @@ filetype off      " Required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -20,11 +19,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'w0rp/ale'
 Plugin 'whiteinge/diffconflicts'
 
-" All of your Plugins must be added before the following line
+" All plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Leader Mappings
+" Leader mapping
 map <,> <leader>
 
 " Cancel the default behavior of putting
