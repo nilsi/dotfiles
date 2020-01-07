@@ -18,6 +18,7 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'w0rp/ale'
+Plugin 'whiteinge/diffconflicts'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
