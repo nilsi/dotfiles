@@ -20,10 +20,12 @@
 
 
 ## Command syntax highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+1. Install syntax highlighting (git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting)
+
+## Vim
+Plugins:
+1. Install Vundle (git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim)
+2. Open vim :PluginInstall
 
 ## Other
-* Increase key stroke speed settings
-
-
-
+* Increase key stroke speed settings in system preferences for keyboard to max.
