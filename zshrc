@@ -6,6 +6,13 @@ ZSH_THEME="robbyrussell"
 # Set Git language to English
 alias git='LANG=en_GB git'
 
+# Set common ip addresses used for adb connect
+alias -g load="10.180.85.212:5665"
+alias -g dig="10.180.85.83:5665"
+alias -g simulator="10.180.85.254:5665"
+
+# For connecting to my common android devices
+
 # Name and save a stash by: $gitstash stash_name
 function gitstash() {
     git stash push -m "zsh_stash_name_$1"
