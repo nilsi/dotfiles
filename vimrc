@@ -1,6 +1,8 @@
 set nocompatible  " Be iMproved, required
 filetype off      " Required
 
+source ~/.simplenoterc
+
 " Plugins end
 "
 " Set the runtime path to include Vundle and initialize, rtp is vim's runtimepath
@@ -18,6 +20,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'w0rp/ale'
 Plugin 'whiteinge/diffconflicts'
+Plugin 'simplenote-vim/simplenote.vim'
 
 " All plugins must be added before the following line
 call vundle#end()            " required
@@ -115,3 +118,4 @@ set wildignore+=*/node_modules/
 set number            " Enable line numbers
 set scrolloff=5       " Leave 5 lines of buffer when scrolling
 set sidescrolloff=10  " Leave 10 characters of horizontal buffer when scrolling
+

@@ -1,5 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/repos/flutter/bin:$PATH"
 
 ZSH_THEME="robbyrussell"
 
@@ -72,3 +73,6 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
+
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

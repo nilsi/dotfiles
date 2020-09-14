@@ -1,0 +1,1 @@
+echo 'W1nter2020##' | sudo openconnect --protocol=nc vpn.cpacsystems.se --user=nini --passwd-on-stdin

@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+if [ "$#" -ne 1 ]
+then
+  echo "Usage: you have to specify a filename"
+  exit 1
+else
+  echo "Saving screenshot to $1"
+fi
+
+adb shell screencap -p /sdcard/screen.png
+adb pull /sdcard/screen.png $1
+adb shell rm /sdcard/screen.png
+
