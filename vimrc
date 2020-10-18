@@ -3,27 +3,27 @@ filetype off      " Required
 
 source ~/.simplenoterc
 
-" Plugins end
-"
-" Set the runtime path to include Vundle and initialize, rtp is vim's runtimepath
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'storyn26383/vim-vue'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'pangloss/vim-javascript'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'w0rp/ale'
-Plugin 'whiteinge/diffconflicts'
-Plugin 'simplenote-vim/simplenote.vim'
+Plug 'VundleVim/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'storyn26383/vim-vue'
+Plug 'digitaltoad/vim-pug'
+Plug 'pangloss/vim-javascript'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
+Plug 'whiteinge/diffconflicts'
+Plug 'simplenote-vim/simplenote.vim'
+Plug 'fatih/vim-go'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'skielbasa/vim-material-monokai'
 
+call plug#end()
 " All plugins must be added before the following line
-call vundle#end()            " required
+
 filetype plugin indent on    " required
 
 " Leader mapping
@@ -53,6 +53,10 @@ set scrolloff=6
 
 " Showcase comments in italics
 highlight Comment cterm=italic gui=italic
+
+set background=dark
+set termguicolors
+colorscheme material-monokai
 
 " Disable the noobiness
 noremap <Up> <NOP>
@@ -118,4 +122,29 @@ set wildignore+=*/node_modules/
 set number            " Enable line numbers
 set scrolloff=5       " Leave 5 lines of buffer when scrolling
 set sidescrolloff=10  " Leave 10 characters of horizontal buffer when scrolling
+
+
+let g:go_gopls_enabled = 1
+let g:go_play_open_browser = 0
+let g:go_auto_sameids = 1
+let g:go_fmt_autosave = 1
+let g:go_imports_autosave = 1
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_def_mapping_enabled = 0
+let g:go_metalinter_autosave_enabled = ['go', 'vet', 'golint']
+let g:go_metalinter_deadline = "5s"
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 

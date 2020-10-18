@@ -2,7 +2,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc bin vim ideavimrc zshrc xvimrc gitignore_global"    # list of files/folders to symlink in homedir
+files="bashrc vimrc bin vim ideavimrc zshrc xvimrc yabairc gitignore_global"    # list of files/folders to symlink in homedir
 
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir

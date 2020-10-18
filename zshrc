@@ -7,6 +7,8 @@ ZSH_THEME="robbyrussell"
 # Set Git language to English
 alias git='LANG=en_GB git'
 
+alias v='nvim'
+
 # Set common ip addresses used for adb connect
 alias -g load="10.180.85.212:5665"
 alias -g dig="10.180.85.83:5665"
@@ -76,3 +78,4 @@ bindkey -s '^o' 'lfcd\n'
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
