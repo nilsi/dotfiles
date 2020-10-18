@@ -7,7 +7,7 @@ ZSH_THEME="robbyrussell"
 # Set Git language to English
 alias git='LANG=en_GB git'
 
-alias v='nvim'
+alias vim='nvim'
 
 # Set common ip addresses used for adb connect
 alias -g load="10.180.85.212:5665"
