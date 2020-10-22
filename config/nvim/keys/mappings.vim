@@ -13,9 +13,9 @@ inoremap <c-u> <ESC>viwUi
 nnoremap <c-u> viwU<Esc>
 
 " TAB in general mode will move to text buffer
-" nnoremap <TAB> :bnext<CR>
+nnoremap <TAB> :bnext<CR>
 " SHIFT-TAB will go back
-" nnoremap <S-TAB> :bprevious<CR>
+nnoremap <S-TAB> :bprevious<CR>
 
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -30,12 +30,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Cancel the default behavior of putting
-" text they delete in the default register.
-nnoremap x "_x
-nnoremap c "_c
-nnoremap C "_C
-
 " Better page up/down behaviour
 map <PageDown> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set scroll=0<CR>
 map <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scroll=0<CR>
@@ -44,8 +38,17 @@ map <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scro
 map <C-n> :NERDTreeToggle<CR>
 
 " FZF
-map <leader>f :Files<CR>
+map <leader><leader> :Files<CR>
 map <leader>b :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>m :Marks<CR>
+
+" Cancel the default behavior of putting
+" text they delete in the default register.
+nnoremap x "_x
+nnoremap c "_c
+nnoremap C "_C
+
+" Paste over without overwriting register
+xnoremap p "_dP

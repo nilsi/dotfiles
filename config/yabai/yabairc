@@ -35,13 +35,13 @@ yabai -m config window_shadow                   float
 
 # Space labels
 yabai -m space 1 --label "Primary"
-yabai -m space 2 --label "Comms"
-yabai -m space 3 --label "Tools"
-yabai -m space 4 --label "Media"
-yabai -m space 5 --label "Social"
-yabai -m space 6 --label "Secondary"
-yabai -m space 7 --label "Secondary"
-yabai -m space 8 --label "Float"
+yabai -m space 2 --label "Terminal"
+yabai -m space 3 --label "Editor"
+yabai -m space 4 --label "Work"
+yabai -m space 5 --label "Media"
+yabai -m space 6 --label "Social"
+yabai -m space 7 --label "Float"
+yabai -m space 8 --label "Secondary"
 
 # Space config
 yabai -m config --space 8 layout float
@@ -49,7 +49,6 @@ yabai -m config --space 8 layout float
 # Unmanaged
 yabai -m rule --add app="^System Preferences$"  manage=off border=off
 yabai -m rule --add app="Harvest"               manage=off border=off
-yabai -m rule --add app="ScreenFlow 9"          manage=off border=off
 yabai -m rule --add app="Finder"                manage=off border=off
 yabai -m rule --add app="Preview"               manage=off border=off
 yabai -m rule --add app="Simulator"             manage=off border=off
@@ -58,6 +57,7 @@ yabai -m rule --add title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Impo
 
 # Primary
 yabai -m rule --add app="Firefox"               space=1
+yabai -m rule --add app="Brave"                 space=1
 
 yabai -m rule --add app="Alacritty"             space=2
 yabai -m rule --add app="Simulator"             space=2
