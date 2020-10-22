@@ -43,6 +43,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Navigate faster
     Plug 'unblevable/quick-scope'
+
+
+    " Airline status bar
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
+    " Fancy start screen with recent files
+    Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Automatically install missing plugins on startup
