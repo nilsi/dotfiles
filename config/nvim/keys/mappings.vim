@@ -13,9 +13,11 @@ inoremap <c-u> <ESC>viwUi
 nnoremap <c-u> viwU<Esc>
 
 " TAB in general mode will move to text buffer
-nnoremap <TAB> :bnext<CR>
+" nnoremap <TAB> :bnext<CR>
 " SHIFT-TAB will go back
-nnoremap <S-TAB> :bprevious<CR>
+" nnoremap <S-TAB> :bprevious<CR>
+" Close buffer easily
+" nmap <leader>q :bp <BAR> bd #<CR>
 
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -38,9 +40,10 @@ map <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scro
 map <C-n> :NERDTreeToggle<CR>
 
 " FZF
-map <leader><leader> :Files<CR>
+map <leader>f :Files<CR>
 map <leader>b :Buffers<CR>
-nnoremap <leader>g :Rg<CR>
+nnoremap <leader>r :Rg<CR>
+nnoremap <leader>g :Ag<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>m :Marks<CR>
 
@@ -51,4 +54,14 @@ nnoremap c "_c
 nnoremap C "_C
 
 " Paste over without overwriting register
-xnoremap p "_dP
+vnoremap p "_dP
+
+" Move block up/down with autoindent
+nnoremap K :<C-u>silent! move-2<CR>==
+nnoremap J :<C-u>silent! move+<CR>==
+xnoremap K :<C-u>silent! '<,'>move-2<CR>gv=gv
+xnoremap J :<C-u>silent! '<,'>move'>+<CR>gv=gv
+
+" Better indenting, highlight again after each indent.
+vnoremap < <gv
+vnoremap > >gv

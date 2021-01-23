@@ -1,4 +1,6 @@
-source ~/.vimrc
+source ~/dotfiles/config/nvim/init.vim 
+
+let g:mapleader = ","
 
 map <leader>t :action RenameElement<CR>
 map <leader>r :action Run<CR>
@@ -13,4 +15,4 @@ map <Left> :action Back<CR>
 map <Right> :action Forward<CR>
 
 set surround
-set clipboard+=ideaput
+set clipboard+=unnamed

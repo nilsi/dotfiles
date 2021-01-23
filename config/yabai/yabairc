@@ -38,10 +38,10 @@ yabai -m space 1 --label "Primary"
 yabai -m space 2 --label "Terminal"
 yabai -m space 3 --label "Editor"
 yabai -m space 4 --label "Work"
-yabai -m space 5 --label "Media"
-yabai -m space 6 --label "Social"
-yabai -m space 7 --label "Float"
-yabai -m space 8 --label "Secondary"
+yabai -m space 5 --label "Private"
+yabai -m space 6 --label "Media"
+yabai -m space 7 --label "Tools"
+yabai -m space 8 --label "Float"
 
 # Space config
 yabai -m config --space 8 layout float
@@ -53,42 +53,39 @@ yabai -m rule --add app="Finder"                manage=off border=off
 yabai -m rule --add app="Preview"               manage=off border=off
 yabai -m rule --add app="Simulator"             manage=off border=off
 yabai -m rule --add app="Archive Utility"       manage=off border=off
+yabai -m rule --add app="Activity Monitor"      manage=off border=off
 yabai -m rule --add title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.' manage=off
 
 # Primary
 yabai -m rule --add app="Firefox"               space=1
 yabai -m rule --add app="Brave"                 space=1
 
+# Terminal
 yabai -m rule --add app="Alacritty"             space=2
-yabai -m rule --add app="Simulator"             space=2
-yabai -m rule --add app="Skim"                  space=2
 
 #Code
 yabai -m rule --add app="Android Studio"        space=3
-yabai -m rule --add app="Code"    space=3
+yabai -m rule --add app="Code"                  space=3
 
-# Communication
+# Work
 yabai -m rule --add app="Microsoft Teams"       space=4
-yabai -m rule --add app="Microsoft Outlook"     space=4
+yabai -m rule --add app="Outlook"               space=4
+yabai -m rule --add app="Skype for Business"    space=4
+
+# Private
+yabai -m rule --add app="Keybase"               space=5
+yabai -m rule --add app="Signal"                space=5
+yabai -m rule --add app="Simplenote"            space=5
 
 # Media
-yabai -m rule --add app="Music"                 space=5
-yabai -m rule --add app="QuickTime Player"      space=5
-yabai -m rule --add app="VLC"                   space=5
-yabai -m rule --add app="Spotify"               space=5
-
-# Social
-yabai -m rule --add app="Keybase"               space=6
-yabai -m rule --add app="Signal"                space=6
-yabai -m rule --add app="Simplenote"            space=6
+yabai -m rule --add app="Music"                 space=6
+yabai -m rule --add app="QuickTime Player"      space=6
+yabai -m rule --add app="VLC"                   space=6
+yabai -m rule --add app="Spotify"               space=6
 
 # Tools
 yabai -m rule --add app="Microsoft Word"        space=7
 yabai -m rule --add app="Sequel Pro"            space=7
+yabai -m rule --add app="Studio 3T"             space=7
 yabai -m rule --add app="Postman"               space=7
-yabai -m rule --add app="Sourcetree"            space=7
-yabai -m rule --add app="Activity Monitor"      space=7
 yabai -m rule --add app="App Store"             space=7
-
-# Floating
-yabai -m rule --add app="^System Preferences$"  space=8

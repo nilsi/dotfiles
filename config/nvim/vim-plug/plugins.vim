@@ -17,6 +17,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
+
     " Theme
     Plug 'joshdick/onedark.vim'
     
@@ -40,10 +41,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Surround anything    
     Plug 'tpope/vim-surround'
 
-
-    " Navigate faster
-    Plug 'unblevable/quick-scope'
-
+    " Git fugitive    
+    Plug 'tpope/vim-fugitive'
 
     " Airline status bar
     Plug 'vim-airline/vim-airline'
@@ -51,6 +50,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Fancy start screen with recent files
     Plug 'mhinz/vim-startify'
+
+    " Color schemes
+    Plug 'christianchiarulli/nvcode-color-schemes.vim'
+
+    " Better highlighting
+    Plug 'nvim-treesitter/nvim-treesitter'
+
+    " Dev icons
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Automatically install missing plugins on startup

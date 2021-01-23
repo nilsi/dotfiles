@@ -2,7 +2,7 @@
 let g:mapleader = ","
 
 syntax enable                           " Enables syntax highlighing
-set hidden                              " Required to keep multiple buffers open multiple buffers
+set hidden                              " Required to keep multiple buffers open.
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
@@ -36,10 +36,21 @@ set clipboard=unnamed,unnamedplus       " Clipboard support (OSX)
 set scrolloff=6                         " Keep cursor away from bottom of screen
 "set autochdir                          " Your working directory will always be the same as your working directory
 
-" Showcase comments in italics
+au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}
+
+"" Showcase comments in italics
 highlight Comment cterm=italic gui=italic
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    keepp %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python,typescript autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " You can't stop me
 cmap w!! w !sudo tee % 
