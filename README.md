@@ -15,5 +15,14 @@
 * Install everything in brewfile: brew bundle
 
 ## Other
-1. Install syntax highlighting (git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting)
+1. Install syntax highlighting by: 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting)
 2. Better reverse search in terminal: $(brew --prefix)/opt/fzf/install
+
+## Neovim
+
+First open run PlugInstall manually.
+
+If getting "Javascript entry not found, please compile coc.nvim by esbuild" when checkhealth. Do:
+cd ${HOME}/.vim/bundles/coc.nvim/
+npm install
