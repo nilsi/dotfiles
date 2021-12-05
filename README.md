@@ -26,3 +26,8 @@ First open run PlugInstall manually.
 If getting "Javascript entry not found, please compile coc.nvim by esbuild" when checkhealth. Do:
 cd ${HOME}/.vim/bundles/coc.nvim/
 npm install
+
+## Autojump
+
+Add the following line to your ~/.bash_profile or ~/.zshrc file:
+  [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
