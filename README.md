@@ -29,5 +29,5 @@ npm install
 
 ## Autojump
 
-Add the following line to your ~/.bash_profile or ~/.zshrc file:
+Add this to ~/.zshrc file:
   [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
