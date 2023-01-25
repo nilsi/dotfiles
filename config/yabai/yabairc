@@ -10,7 +10,7 @@ yabai -m config focus_follows_mouse             off
 yabai -m config window_placement                second_child
 yabai -m config window_topmost                  off
 yabai -m config window_shadow                   off
-yabai -m config window_border                   on
+yabai -m config window_border                   off
 yabai -m config window_border_placement         exterior
 yabai -m config window_border_width             3
 yabai -m config window_border_radius            3
@@ -36,15 +36,15 @@ yabai -m config window_topmost                  on
 yabai -m config window_shadow                   float
 
 # Space labels
-yabai -m space 1 --label "Browser"
-yabai -m space 2 --label "Terminal"
-yabai -m space 3 --label "Editor"
-yabai -m space 4 --label "Plan"
-yabai -m space 5 --label "Private"
-yabai -m space 6 --label "Work"
-yabai -m space 7 --label "Media"
-yabai -m space 8 --label "Tools"
-yabai -m space 9 --label "Float"
+yabai -m space 1 --label "1"
+yabai -m space 2 --label "2"
+yabai -m space 3 --label "3"
+yabai -m space 4 --label "4"
+yabai -m space 5 --label "5"
+yabai -m space 6 --label "6"
+yabai -m space 7 --label "7 Media"
+yabai -m space 8 --label "8 Tools"
+yabai -m space 9 --label "9 Float"
 
 # Space config
 yabai -m config --space 8 layout float
@@ -70,21 +70,21 @@ yabai -m rule --add app="Alacritty"             space=2
 yabai -m rule --add app="Android Studio"        space=3
 yabai -m rule --add app="Code"                  space=3
 
-#Code
-yabai -m rule --add app="Calendar"              space=4
-yabai -m rule --add app="Mail"                  space=4
+# Work
+yabai -m rule --add app="Microsoft Teams"       space=4
+yabai -m rule --add app="Slack"                 space=4
+yabai -m rule --add app="Outlook"               space=4
+yabai -m rule --add app="Skype for Business"    space=4
 
 # Private
 yabai -m rule --add app="Keybase"               space=5
 yabai -m rule --add app="Signal"                space=5
-yabai -m rule --add app="Simplenote"            space=5
+yabai -m rule --add app="Element"               space=5
 
-# Work
-yabai -m rule --add app="Microsoft Teams"       space=6
-yabai -m rule --add app="Slack"                 space=6
-yabai -m rule --add app="Outlook"               space=6
-yabai -m rule --add app="Skype for Business"    space=6
-
+#Plan
+yabai -m rule --add app="Calendar"              space=6
+yabai -m rule --add app="Mail"                  space=6
+yabai -m rule --add app="Simplenote"            space=6
 
 # Media
 yabai -m rule --add app="Music"                 space=7
@@ -98,3 +98,7 @@ yabai -m rule --add app="Sequel Pro"            space=8
 yabai -m rule --add app="Studio 3T"             space=8
 yabai -m rule --add app="Postman"               space=8
 yabai -m rule --add app="App Store"             space=8
+
+# Tools
+yabai -m rule --add app="Steam"                 space=9
+

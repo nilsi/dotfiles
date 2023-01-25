@@ -59,6 +59,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Dev icons
     Plug 'ryanoasis/vim-devicons'
+
+    " Simplenote integration in vim
+    Plug 'simplenote-vim/simplenote.vim'
 call plug#end()
 
 " Automatically install missing plugins on startup

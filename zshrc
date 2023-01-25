@@ -1,6 +1,29 @@
 export ZSH="$HOME/.oh-my-zsh"
+
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/repos/flutter/bin:$PATH"
+export PATH="$HOME/Library/Android/sdk/cmdline-tools/latest/bin:$PATH"
+export PATH="$HOME/Library/Android/sdk/extras/google/instantapps:$PATH"
+
+export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home/
+export PATH=$PATH:$JAVA_HOME/bin
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
+
+
+export GEM_HOME="$HOME/.gem"
+
+eval "$(pyenv init -)"
+eval "$(rbenv init - zsh)"
+
+alias studio="open -a /Applications/Android\ Studio.app"
+
 
 ZSH_THEME="robbyrussell"
 

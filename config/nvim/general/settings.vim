@@ -52,5 +52,9 @@ endfun
 
 autocmd FileType c,cpp,java,php,ruby,python,typescript autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
+" Spell-check Markdown files and Git Commit Messages
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+
 " You can't stop me
 cmap w!! w !sudo tee % 

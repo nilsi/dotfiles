@@ -1,5 +1,7 @@
 source ~/dotfiles/config/nvim/init.vim 
 
+set visualbell
+
 let g:mapleader = ","
 
 map <leader>t :action RenameElement<CR>
