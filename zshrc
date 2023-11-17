@@ -9,7 +9,7 @@ export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
-export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home
 export PATH=$PATH:$JAVA_HOME/bin
 
 
@@ -23,6 +23,9 @@ eval "$(pyenv init -)"
 eval "$(rbenv init - zsh)"
 
 alias studio="open -a /Applications/Android\ Studio.app"
+
+alias :q="exit"
+alias :wq="exit"
 
 
 ZSH_THEME="robbyrussell"
@@ -99,6 +102,15 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
+
+# Update outdated packages for sketchybar after running brew commands
+function brew() {
+  command brew "$@" 
+
+  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+    sketchybar --trigger brew_update
+  fi
+}
 
 # autojump
  [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh

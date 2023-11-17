@@ -16,5 +16,8 @@ map <leader>D "_D
 map <Left> :action Back<CR>
 map <Right> :action Forward<CR>
 
+nmap gi :action GotoImplementation<CR>
+
 set surround
 set clipboard+=unnamed
+set idearefactormode=keep
