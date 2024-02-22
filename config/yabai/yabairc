@@ -2,6 +2,12 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
+# focus window after active space changes
+yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+
+# focus window after active display changes
+yabai -m signal --add event=display_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+
 # Sketchybar needed for yabai window state and running application icons
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
@@ -54,6 +60,7 @@ yabai -m space 9 --label "9 Float"
 # Space config
 yabai -m config --space 8 layout float
 
+# TO FIND A SPECIFIC NAME OF A WINDOW OR APP RUN $ yabai -m query --windows | jq '.[] | { app: .app, title: .title }'
 # Unmanaged
 yabai -m rule --add app="^System Preferences$"  manage=off border=off
 yabai -m rule --add app="Harvest"               manage=off border=off
@@ -62,9 +69,10 @@ yabai -m rule --add app="Preview"               manage=off border=off
 yabai -m rule --add app="Simulator"             manage=off border=off
 yabai -m rule --add app="Archive Utility"       manage=off border=off
 yabai -m rule --add app="Activity Monitor"      manage=off border=off
-yabai -m rule --add title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.' manage=off
+yabai -m rule --add title=".*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.|New Message" manage=off
 
 # Primary
+yabai -m rule --add app="Google Chrome"         space=1
 yabai -m rule --add app="Firefox"               space=1
 yabai -m rule --add app="Brave"                 space=1
 
@@ -74,6 +82,7 @@ yabai -m rule --add app="Alacritty"             space=2
 #Code
 yabai -m rule --add app="Android Studio"        space=3
 yabai -m rule --add app="Code"                  space=3
+yabai -m rule --add app="Fleet"                 space=3
 
 # Work
 yabai -m rule --add app="Microsoft Teams"       space=4
@@ -86,7 +95,7 @@ yabai -m rule --add app="Keybase"               space=5
 yabai -m rule --add app="Signal"                space=5
 yabai -m rule --add app="Element"               space=5
 
-#Plan
+# Planning
 yabai -m rule --add app="Calendar"              space=6
 yabai -m rule --add app="Mail"                  space=6
 yabai -m rule --add app="Simplenote"            space=6
@@ -104,6 +113,6 @@ yabai -m rule --add app="Studio 3T"             space=8
 yabai -m rule --add app="Postman"               space=8
 yabai -m rule --add app="App Store"             space=8
 
-# Tools
+# Gaming
 yabai -m rule --add app="Steam"                 space=9
 

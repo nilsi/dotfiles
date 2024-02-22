@@ -18,6 +18,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
+    " Preview vim latex tex files live
+    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
     " Theme
     Plug 'joshdick/onedark.vim'
     

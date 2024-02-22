@@ -12,10 +12,8 @@ export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home
 export PATH=$PATH:$JAVA_HOME/bin
 
-
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/shims:$PATH"
-
 
 export GEM_HOME="$HOME/.gem"
 
@@ -24,6 +22,7 @@ eval "$(rbenv init - zsh)"
 
 alias studio="open -a /Applications/Android\ Studio.app"
 
+alias v="nvim"
 alias :q="exit"
 alias :wq="exit"
 

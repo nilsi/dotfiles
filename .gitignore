@@ -1,2 +1,5 @@
 .DS_Store
 config/nvim/autoload/plugged/*
+config/nvim/plug-config/simplenote.vim
+config/coc/list_history.dat
+config/karabiner/automatic_backups
